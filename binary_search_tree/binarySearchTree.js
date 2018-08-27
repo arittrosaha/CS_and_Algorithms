@@ -85,7 +85,7 @@ tree.insert(16);
 tree.insert(13);
 tree.insert(4);
 tree.insert(7);
-tree.bFirst()
+tree.bFirst();
 // tree.inorder(); // # => 5, 10, 13, 15, 16
 // tree.dFirst1(); // # => 10, 5, 15, 13, 16
 // tree.dFirst2(); // # => 10, 5, 15, 13, 16
