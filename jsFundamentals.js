@@ -17,4 +17,42 @@ function caller() {
   console.log(arr);
 }
 
-caller();
+// caller();
+
+
+// spread and rest operator
+
+function sayHello(first, last, ...otherArgs) { // resting
+  console.log(first);
+  console.log(last);
+  console.log(otherArgs);
+  console.log(...otherArgs); // spreading
+}
+
+// spread - when we use ... infront of an array argument, we are unpacking th elements (removing the bracket).
+// rest - when we use ... infront of a parameter we, accept all arguments into that param.
+
+// sayHello("alvin", "zablan", "ny", "brooklyn", "11211");
+
+// Generator function
+
+function* myGenerator() {
+  console.log('first');
+  yield 42;
+  console.log('second');
+  yield 100;
+}
+
+let gen = myGenerator();
+// console.log(gen.next());
+// console.log(gen.next());
+
+// for...of loop
+// of calls next() for a Iterator Object
+
+for (let thing of gen) {
+  console.log(thing);
+}
+
+// for..in loop
+// in can be used to iterate through only POJO
