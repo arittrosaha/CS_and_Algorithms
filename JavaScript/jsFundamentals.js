@@ -56,3 +56,16 @@ for (let thing of gen) {
 
 // for..in loop
 // in can be used to iterate through only POJO
+
+
+// function within the function; closure
+function makeCounter(num){
+  var i = num;
+
+  function count() {
+    console.log(i); // i is closed over
+    i++;
+  }
+
+  return count;
+}
