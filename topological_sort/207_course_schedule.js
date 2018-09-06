@@ -42,7 +42,7 @@ var canFinish = function(numCourses, prerequisites) {
     // visitable = false;
     const beforeSize = unvisited.size;
     for (let course of unvisited) {
-      if (Array.from(courses[course]).every((preReq) => !unvisited.has(preReq.toString()))) {
+      if (Array.from(courses[course]).every((preReq) => !unvisited.has(preReq))) {
         unvisited.delete(course);
         // visitable = true;
       }
@@ -60,7 +60,7 @@ var graphify = function(edges) {
     if (!(edge[0] in graph)) {
       graph[edge[0]] = new Set();
     }
-    graph[edge[0]].add(edge[1]);
+    graph[edge[0]].add(String(edge[1]));
     if (!(edge[1] in graph)) {
       graph[edge[1]] = new Set();
     }
