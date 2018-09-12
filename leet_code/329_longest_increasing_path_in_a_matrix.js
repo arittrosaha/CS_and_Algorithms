@@ -28,5 +28,5 @@
 // Moving diagonally is not allowed.
 
 var longestIncreasingPath = function(matrix) {
-
+  
 };
