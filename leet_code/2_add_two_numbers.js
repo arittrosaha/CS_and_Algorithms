@@ -25,24 +25,24 @@
  * @return {ListNode}
  */
 class Node {
-  construction(val) {
+  constructor(val) {
     this.val = val;
     this.next = null;
   }
 }
 
-function add(head1, head2, carry = 0) {
+function addTwoNumbers(head1, head2, carry = 0) {
   if (!head1 && !head2) return null;
 
   if (!head1) {
     let result = new Node(head2.val);
-    result.next = add(head1, head2.next);
+    result.next = addTwoNumbers(head1, head2.next);
     return result;
   }
 
   if (!head2) {
     let result = new Node(head1.val);
-    result.next = add(head1.next, head2);
+    result.next = addTwoNumbers(head1.next, head2);
     return result;
   }
 
@@ -51,30 +51,31 @@ function add(head1, head2, carry = 0) {
 
   if (sum > 9) {
     ans = new Node(sum % 10);
-    ans.next = add(head1.next, head2.next, 1);
+    ans.next = addTwoNumbers(head1.next, head2.next, 1);
   } else {
     ans = new Node(sum % 10);
-    ans.next = add(head1.next, head2.next);
+    ans.next = addTwoNumbers(head1.next, head2.next);
   }
 }
 
 let l1 = new Node(2);
-l1.next = new Node(4);
-l1.next.next = new Node(3);
+l1.next = new Node (4);
+l1.next.next = new Node (3);
 
 let l2 = new Node(5);
 l2.next = new Node(6);
 l2.next.next = new Node(4);
 
-// var addTwoNumbers = function(l1, l2) {
-//
-// };
+console.log(addTwoNumbers(l1, l2));
 
-function lln(ll) {
-  if (ll.next === undefined) return ll.val;
-  let numbers = [];
-  numbers.push(lln(ll.next));
-  return numbers;
-}
 
-console.log(lln(l1));
+// function LLNumber(ll) {
+//   if (ll.next === null) return ll.val;
+//   console.log(ll);
+//   let numbers = [];
+//   numbers += (ll.val);
+//   numbers += (LLNumber(ll.next));
+//   return numbers;
+// }
+
+// console.log(lln(l1));
