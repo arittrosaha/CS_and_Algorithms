@@ -1,0 +1,1 @@
+Two's complement - it is how we represent negative values in binary.
