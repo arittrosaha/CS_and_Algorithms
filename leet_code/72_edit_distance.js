@@ -31,30 +31,48 @@
  * @return {number}
  */
 
-var minDistance = function(word1, word2) {
-  if (word1 === word2) return 0;
-  if (word1.length === 0) return word2.length;
-  if (word2.length === 0) return word1.length;
+var minDistance = function(word1, word2, memo = {}) {
+  if (!word1) return word2.length;
+  if (!word2) return word1.length;
+  let k = word1 + " " + word2;
+  if (k in memo) return memo[k];
 
-  let options = [];
+  let last1 = word1[word1.length - 1];
+  let last2 = word2[word2.length - 1];
 
-  for (var i = 0; i < word1.length; i++) {
-    let slicedWord = word1.slice(0, i) + word1.slice(i + 1)
-    options.push(1 + minDistance(slicedWord, word2))
-  }
+  memo[k] = Math.min(
+    minDistance(word1.slice(0, -1), word2) + 1,
+    minDistance(word1, word2.slice(0, -1)) + 1,
+    minDistance(word1.slice(0, -1), word2.slice(0, -1)) + (last1 == last2 ? 0 : 1)
+  )
 
-  for (var j = 0; j < word2.length; j++) {
-    let slicedWord = word2.slice(0, j) + word2.slice(j + 1)
-    options.push(1 + minDistance(word1, slicedWord))
-  }
+  return memo[k];
+}
 
-  for (var k = 0; k < word1.length; k++) {
-    for (var l = 0; l < word2.length; l++) {
-      let slicedWord1 = word1.slice(0, k) + word1.slice(k + 1);
-      let slicedWord2 = word2.slice(0, l) + word2.slice(l + 1);
-      options.push(1 + minDistance(slicedWord1, slicedWord2));
-    }
-  }
-
-  return Math.min(...options);
-};
+// var minDistance = function(word1, word2) {
+//   if (word1 === word2) return 0;
+//   if (word1.length === 0) return word2.length;
+//   if (word2.length === 0) return word1.length;
+//
+//   let options = [];
+//
+//   for (var i = 0; i < word1.length; i++) {
+//     let slicedWord = word1.slice(0, i) + word1.slice(i + 1)
+//     options.push(1 + minDistance(slicedWord, word2))
+//   }
+//
+//   for (var j = 0; j < word2.length; j++) {
+//     let slicedWord = word2.slice(0, j) + word2.slice(j + 1)
+//     options.push(1 + minDistance(word1, slicedWord))
+//   }
+//
+//   for (var k = 0; k < word1.length; k++) {
+//     for (var l = 0; l < word2.length; l++) {
+//       let slicedWord1 = word1.slice(0, k) + word1.slice(k + 1);
+//       let slicedWord2 = word2.slice(0, l) + word2.slice(l + 1);
+//       options.push(1 + minDistance(slicedWord1, slicedWord2));
+//     }
+//   }
+//
+//   return Math.min(...options);
+// };
