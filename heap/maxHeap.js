@@ -1,6 +1,7 @@
 class MaxHeap {
-  constructor() {
+  constructor(array=[]) {
     this.array = [null];
+    array.forEach(val => this.insert(val));
   }
 
   insert(val) {
@@ -45,14 +46,15 @@ class MaxHeap {
   }
 }
 
-let heap = new MaxHeap();
-heap.insert(100);
-heap.insert(50);
-heap.insert(75);
-// heap.insert(60);
-// heap.insert(45);
-// heap.insert(62);
-// heap.insert(63);
-heap.delete();
-
+let heap = new MaxHeap([1,2,3,4,5,6,7,8]);
 console.log(heap.array);
+// heap.insert(100);
+// heap.insert(50);
+// heap.insert(75);
+// // heap.insert(60);
+// // heap.insert(45);
+// // heap.insert(62);
+// // heap.insert(63);
+// heap.delete();
+//
+// console.log(heap.array);
