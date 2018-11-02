@@ -63,6 +63,26 @@ function next_levels(root, level) {
   return [...next_levels(root.left, level - 1), ...next_levels(root.right, level - 1)];
 }
 
+
+function rob2(root, parent = null) {
+  if (!root && !parent) return 0;
+  if (!root) return [0, 0];
+
+  let left = rob2(root.left, root);
+  let right = rob2(root.right, root);
+
+  let childrenSum = left[0] + right[0];
+  let grandchildrenSum = left[1] + right[1];
+
+
+  if (parent) {
+    root.val = Math.max(root.val + grandchildrenSum, childrenSum);
+    return [root.val, childrenSum];
+  } else {
+    return Math.max((root.val + grandchildrenSum), childrenSum);
+  }
+}
+
 // Testing
 
 // let a = new TreeNode(3);
