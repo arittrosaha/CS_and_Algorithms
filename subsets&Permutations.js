@@ -1,4 +1,4 @@
-function subsets(arr) {
+function subsets(arr) {  // O(2^n) and not O(n^2) because return gets double at each stack
   if (arr.length === 0) {
     return [[]];
   }
@@ -10,7 +10,8 @@ function subsets(arr) {
 
   return [...withoutFirst, ...withFirst];
 }
-// let arr1 = ["a", "b", "c", "d"];
+
+ // let arr1 = ["a", "b", "c", "d"];
 // console.log(subsets(array));
 
 
