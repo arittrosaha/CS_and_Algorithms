@@ -22,15 +22,12 @@ var partition = function (s, memo={}) {
     let results = [];
     for (let i = 0; i < s.length; i++) {
         let left = s.slice(0, i+1)
-        let right = s.slice(i+1);
-        partition(right, memo).map(result => {
-            let newResult = [];
-            if (palindrome(left)) {
-                newResult.push(left)
-                newResult.push(...result);
-            }
-            if (newResult.length) results.push(newResult)
-        });
+        if (palindrome(left)) {
+            let right = s.slice(i+1);
+            partition(right, memo).map(result => {
+                results.push([left, ...result]);
+            });
+        }
     }
 
     memo[key] = results;
