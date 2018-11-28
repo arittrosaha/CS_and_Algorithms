@@ -24,7 +24,7 @@ var partition = function (s, memo={}) {
         let left = s.slice(0, i+1)
         if (palindrome(left)) {
             let right = s.slice(i+1);
-            partition(right, memo).map(result => {
+            partition(right, memo).forEach(result => {
                 results.push([left, ...result]);
             });
         }
