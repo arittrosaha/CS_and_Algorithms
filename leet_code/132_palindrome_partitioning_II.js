@@ -12,7 +12,7 @@
  * @return {number}
  */
 
-var 3 = function (s) {
+var minCut = function (s) {
     return (minPartition(s).length - 1);
 };
 
