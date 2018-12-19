@@ -34,7 +34,7 @@
  * @return {number}
  */
 
-var findCheapestPrice = function (n, flights, src, dst, K) {
+var 1 = function (n, flights, src, dst, K) {
 
 };
 
@@ -56,3 +56,65 @@ function minPath(node, dest, adj, k) {
 // todo:
 // - build adj list
 // - hand inner cycles
+
+// Alvin's solution
+function findCheapestPrice1(n, flights, src, dst, k) {
+  let adj = buildAdjList(flights);
+  let minCost = { [src]: 0 };
+  let queue = [src];
+  let pathSize = 0;
+  while (pathSize <= k) {
+    let newNodes = [];
+    let newMinCost = {};
+    while (queue.length) {
+      let node = queue.pop();
+      let costs = adj[node];
+      for (let neighbor in costs) {
+        let thisCost = minCost[node] + costs[neighbor];
+        if (
+          thisCost < newMinCost[neighbor] ||
+          newMinCost[neighbor] === undefined
+        ) {
+          newMinCost[neighbor] = thisCost;
+          newNodes.push(neighbor);
+        }
+      }
+    }
+    for (let n in newMinCost) {
+      if (newMinCost[n] < minCost[n] || minCost[n] === undefined)
+        minCost[n] = newMinCost[n];
+    }
+    queue.push(...Object.keys(newMinCost));
+    pathSize++;
+  }
+  return minCost[dst] || -1;
+}
+
+function buildAdjList(flights) {
+  let adj = {};
+  flights.forEach(flight => {
+    let [src, dst, cost] = flight;
+    if (src in adj) {
+      adj[src][dst] = cost;
+    } else {
+      adj[src] = { [dst]: cost };
+    }
+  });
+  return adj;
+}
+
+// Chao's solution
+var findCheapestPrice = function (n, flights, src, dst, K) {
+    let dp = new Array(n);
+    dp.fill(Infinity);
+    dp[src] = 0;
+
+    for (let i = 0; i <= K; i++) {
+        let newDp = dp.slice();
+        for (let j = 0; j < flights.length; j++) {
+            newDp[flights[j][1]] = Math.min(newDp[flights[j][1]], dp[flights[j][0]] + flights[j][2]);
+        }
+        dp = newDp;
+    }
+    return dp[dst] === Infinity ? -1 : dp[dst];
+};
