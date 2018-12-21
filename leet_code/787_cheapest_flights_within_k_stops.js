@@ -34,9 +34,7 @@
  * @return {number}
  */
 
-var 1 = function (n, flights, src, dst, K) {
-
-};
+var findCheapestPrice = function(n, flights, src, dst, K) {};
 
 function minPath(node, dest, adj, k) {
     if (node === dest) return 0;
@@ -105,16 +103,16 @@ function buildAdjList(flights) {
 
 // Chao's solution
 var findCheapestPrice = function (n, flights, src, dst, K) {
-    let dp = new Array(n);
-    dp.fill(Infinity);
-    dp[src] = 0;
+  let dp = new Array(n);
+  dp.fill(Infinity);
+  dp[src] = 0;
 
-    for (let i = 0; i <= K; i++) {
-        let newDp = dp.slice();
-        for (let j = 0; j < flights.length; j++) {
-            newDp[flights[j][1]] = Math.min(newDp[flights[j][1]], dp[flights[j][0]] + flights[j][2]);
-        }
-        dp = newDp;
+  for (let i = 0; i <= K; i++) {
+    let newDp = dp.slice();
+    for (let j = 0; j < flights.length; j++) {
+      newDp[flights[j][1]] = Math.min(newDp[flights[j][1]], dp[flights[j][0]] + flights[j][2]);
     }
-    return dp[dst] === Infinity ? -1 : dp[dst];
+    dp = newDp;
+  }
+  return dp[dst] === Infinity ? -1 : dp[dst];
 };
