@@ -18,7 +18,8 @@ def is_palindrome(s):
         return [chr(char) for char in range(ord(start), ord(end)+1)]
         # ord() -> https://docs.python.org/3/library/functions.html#ord
         # chr() -> https://docs.python.org/3/library/functions.html#chr
-
+        # https://stackoverflow.com/questions/7001144/range-over-character-in-python
+        
     left_idx, right_idx = 0, len(s)-1
     alphabets = alphabets_range("a", "z")
     while left_idx <= right_idx:
