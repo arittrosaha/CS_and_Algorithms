@@ -8,6 +8,11 @@
 # -> Singly linked list - each node only reference the next node
 # -> Doubly linked list - each node references the next and the previous node
 
+def print_list(ll):
+    while ll:
+        print(ll.data)
+        ll = ll.next
+
 class SinglyListNode:
     def __init__(self, data=0, next=None):
         self.data = data
