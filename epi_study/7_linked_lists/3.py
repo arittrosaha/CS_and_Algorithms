@@ -50,7 +50,7 @@ eleven_cycle = SinglyListNode(11, three)
 # return_value_non_cycle = has_cycle(eleven_non_cycle)
 # print(return_value_non_cycle)
 
-# Floyed's algorithm - check out the explanation from CTCI pg 223
+# Floyd's algorithm - check out the explanation from CTCI pg 223
 def has_cycle_epi(head):
     slow, fast = head, head
     while slow and fast and slow.next and fast.next.next:
