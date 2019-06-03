@@ -1,5 +1,12 @@
 # Queues - first in, first-out (FIFO)
 
+# Queues libraries
+    # s.append(e) - pushing at the end
+    # q[0] - peeking at the front without popping
+    # q.popleft() - will remove and return the first element
+
+    
+
 # Stacks - last in, first-out (LIFO)
     # linked list - pop and push are O(1)
     # arrays - pop and push are ammortized O(1)
@@ -8,7 +15,7 @@
 
 # Stack libraries
     # s.append(e) - pushing at the end
-    # s[-1] - peeking without popping
+    # s[-1] - peeking at the end without popping
     # s.pop() - will remove and return the last element
     # len(s) - 0 tests if the stack is empty
 
