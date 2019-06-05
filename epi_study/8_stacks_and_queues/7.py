@@ -21,6 +21,8 @@ class Queue_EPI:
             # everything upto but not including the head + everything from head including the head
             self._queue += [None] * (len(self._queue) * self.SCALE_FACTOR - len(self._queue))
             # (number of elements * the scale) - one length of elements
+            # when scale factor is 2, it is just 2 x length - length which does not matter much
+            # but when the scale factor is bigger than 2, it makes a difference
         self._queue[self.tail] = element
         self._tail = (self._tail + 1) % len(self._entries)
         # modulo to make it circular
