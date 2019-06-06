@@ -48,18 +48,24 @@
 # Recursive implementation : O(n) time and O(h) space for the depth of call stack
 # If each node has a parent attribute : O(n) and O(1) space iteratively
 
-def tree_traversal(root):
+def tree_traversal(root, order):
     # comment back in the specific traversel line that is in need
     if root:
-        # print("Preorder: %d" % root.data)
-        tree_traversal(root.left)
+        if order == "pre":
+            print("Preorder: %d" % root.data)
+            
+        tree_traversal(root.left, order)
 
-        # print("Inorder: %d" % root.data)
-        tree_traversal(root.right)
-
-        # print("Postorder: %d" % root.data)
+        if order == "in":
+            print("Inorder: %d" % root.data)
+            
+        tree_traversal(root.right, order)
+        
+        if order == "post":
+            print("Postorder: %d" % root.data)
 
 
 class BinaryTree:
-	def __init__(self):
-    	self.left = self.right = self.parent = None
+    def __init__(self, data=None):
+        self.data = data
+        self.left = self.right = self.parent = None

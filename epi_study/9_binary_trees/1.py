@@ -1,3 +1,7 @@
+import importlib
+zero = importlib.import_module('0')
+BinaryTree = zero.BinaryTree
+
 # Test if a binary tree is height-balanced
 
 # Background - height-balanced aka balanced binary tree. It does not have to be perfect or complete
@@ -29,12 +33,7 @@ def is_balanced_binary_tree(tree): # Time: O(n) ; Space: O(h)
         return False
 
 
-class BinaryTree:
-    def __init__(self, data=None):
-        self.data = data
-        self.left = self.right = self.parent = None
-
-
+# check page 124 for diagram
 A = BinaryTree("A")
 B = BinaryTree("B")
 C = BinaryTree("C")
@@ -66,7 +65,7 @@ K.right = O # if exist, then it a balanced tree other wise false
 L.left = M
 L.right = N
 
-# print(is_balanced_binary_tree(A))
+print(is_balanced_binary_tree(A))
 
 import collections
 def is_balanced_binary_tree_EPI(tree): # logically, this solution is fundamentally like mine but done lot more properly 
