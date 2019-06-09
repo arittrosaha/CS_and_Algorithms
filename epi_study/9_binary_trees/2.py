@@ -40,7 +40,7 @@ BinaryTree = zero.BinaryTree
 
 import collections
 def is_symmetric(tree): # Time: O(n) ; Space: O(n) because of the path array
-    def traversel(head, path=[]):
+    def traversal(head, path=[]):
         if not head:
             # for the case of right, if there is no head but a path was passed on from left, that path needs to be passed back for parent to be added later
             if path:
@@ -48,12 +48,12 @@ def is_symmetric(tree): # Time: O(n) ; Space: O(n) because of the path array
             else:
                 return []
 
-        left_added_path = traversel(head.left, path)
-        right_added_path = traversel(head.right, left_added_path)
+        left_added_path = traversal(head.left, path)
+        right_added_path = traversal(head.right, left_added_path)
         return right_added_path + [head.data]
     
-    left_path = traversel(tree.left, [])
-    right_path = traversel(tree.right, [])
+    left_path = traversal(tree.left, [])
+    right_path = traversal(tree.right, [])
     print(left_path)
     print(right_path)
     return left_path == right_path

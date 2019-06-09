@@ -1,3 +1,4 @@
+import collections
 import importlib
 zero = importlib.import_module('0')
 BinaryTree = zero.BinaryTree
@@ -70,7 +71,6 @@ L.right = N
 
 # print(lca(A, F, G)) # => C
 
-import collections
 def lca_epi(tree, node0, node1): # logically, this solution is fundamentally like mine but done lot more properly
     # making tuples with attributes
     # num_target_nodes can be either 0 or 1 or 2. When it is 2, the LCA is found and saved in ancestor. Otherwise, ancestor is always None

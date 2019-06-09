@@ -48,24 +48,71 @@
 # Recursive implementation : O(n) time and O(h) space for the depth of call stack
 # If each node has a parent attribute : O(n) and O(1) space iteratively
 
-def tree_traversal(root, order):
+class BinaryTree:
+    def __init__(self, data=None):
+        self.data = data
+        self.left = self.right = self.parent = None
+
+def traversal_epi(root, order):
     # comment back in the specific traversel line that is in need
     if root:
         if order == "pre":
             print("Preorder: %d" % root.data)
             
-        tree_traversal(root.left, order)
+        traversal_epi(root.left, order)
 
         if order == "in":
             print("Inorder: %d" % root.data)
             
-        tree_traversal(root.right, order)
+        traversal_epi(root.right, order)
         
         if order == "post":
             print("Postorder: %d" % root.data)
 
 
-class BinaryTree:
-    def __init__(self, data=None):
-        self.data = data
-        self.left = self.right = self.parent = None
+def traversal(head, order, path =[]):
+	if not head:
+		# for the case of right, if there is no head but a path was passed on from left, that path needs to be passed back for parent to be added later
+		if path:
+			return path
+		else:
+			return []
+
+	if order == "pre":
+		path += [head.data]
+	left_added_path = traversal(head.left, order, path)
+	if order == "in":
+		left_added_path += [head.data]
+	right_added_path = traversal(head.right, order, left_added_path)
+	if order == "post":
+		right_added_path += [head.data]
+
+	return right_added_path
+
+# Figure: 9.5 ; page: 136
+H = BinaryTree("H")
+B = BinaryTree("B")
+C = BinaryTree("C")
+F = BinaryTree("F")
+E = BinaryTree("E")
+A = BinaryTree("A")
+C = BinaryTree("C")
+D = BinaryTree("D")
+G = BinaryTree("G")
+I = BinaryTree("I")
+
+H.left = B
+B.left = F
+B.right = E
+E.left = A
+H.right = C
+C.right = D
+D.right = G
+G.left = I
+
+# inorder = traversal(H, "in")
+# print(inorder)
+# preorder = traversal(H, "pre")
+# print(preorder)
+
+
