@@ -34,7 +34,7 @@ def top_k(k, stream):
 # ref -> https://docs.python.org/3/library/heapq.html
     # -> heapq.heapify(L)                             - transforms the elements in L into a heap in-place
     # -> heapq.nlargest(k, L) / heapq.nsmallest(k, L) - returns k largest / smallest elements in L
-    # -> heapq.heappush(h, e)                         - pushes a new element on the heap
+    # -> heapq.heappush(h, e)                         - pushes a new element, e on the heap, h
     # -> heapq.heappop(h)                             - pops the smallest element from the heap
     # -> heapq.heapushpop(h, a)                       - pushes on the heap and then pops and returns the smallest element
     # -> e = h[0]                                     - returns smallest element on the heap without popping it
