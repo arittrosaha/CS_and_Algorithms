@@ -59,20 +59,20 @@ def reverse_sublist_v2(head, s, f): # Time: O(n) ; Space: O(1)
             return [head, remaining]
 
         result = reverse_recurr(head.next, range_i+1, head)
-
+        # all of the following comparision won't happen until finish is reached because line 61 is before all the following
         if range_i > s:
-            head.next = prev
+            head.next = prev # simple reversing pointing until s is reached back again
         elif range_i == s:
-            head.next = result[1]
+            head.next = result[1] # the node at start points to the node after finish
             if prev != None:
-                prev.next = result[0]
+                prev.next = result[0] # the previous node to the start points to the node at the finish
             elif prev == None:
-                return result[0]
+                return result[0] # if the previous node is None indicating the start of the list, then just return the node at the finish as the new list head
 
-        if range_i == 1:
-            return head
+        if range_i == 1: # when range_1 is 1 it indicates the first call stack
+            return head # just the normal head in that scope is returned
         else:
-            return result
+            return result # else the array result carrying the two information from the finish edge of the list keep getting returned
             
     return reverse_recurr(head, 1)
 

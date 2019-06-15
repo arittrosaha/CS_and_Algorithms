@@ -1,7 +1,17 @@
 # Merge sorted files
 
+# Story Background: 
+# -> 500 Files of stock data purchases throughout the day of all 500 Fortune companies
+# -> Each file represents stock data for one company
+# -> Each line represents a single transaction
+# -> Each transaction has the time of the trade expressed in milliseconds since the start of the day's trading
+
+# Problem Background:
+# -> Each array will represent a file
+# -> Each element represent the purchase 
+
 # Prompt:
-# Input: a set of sorted sequences
+# Input: a set of sorted sequences 
 # Output: the union of these sequences as a sorted sequence
 
 # Example:
@@ -10,7 +20,7 @@
 
 
 import heapq
-def merge_sorted_arrays(sorted_arrays):
+def merge_sorted_arrays(sorted_arrays): # Time: O(nlogk) ; Space: O(k) ; n is the total number of elements ; k is the number of subarrays
     # creating the empty heap with a list
     min_heap = [] 
 
@@ -26,7 +36,8 @@ def merge_sorted_arrays(sorted_arrays):
 
         if first_element: # if it is not None
             heapq.heappush(min_heap, (first_element, i)) # each element in the heap will have two information - the element and it's iterator's index 
-    
+            # In case of files, we don't need to track them unlike the arrays, the file I/O library tracks the first unread entry in the file
+
     result = [] # where our result will be
     while min_heap: # while we have still elements that need to be popped from min_heap
         # we extract the smallest element from the heap and it's associated iterator index
@@ -43,7 +54,7 @@ def merge_sorted_arrays(sorted_arrays):
 
 # -> The min-heap is initialized with the first element of each array
     # so if there are 3 arrays, we will have 3 elements and will always be that way
-# -> So time O(n) is nlogk, n being the number of total elements and k being the number of arrays
+# -> So Big-O time is nlogk, n being the number of total elements and k being the number of arrays
     # which is better than nlogn if all the arrays were concatinated and then sorted
 
 

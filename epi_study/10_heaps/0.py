@@ -14,7 +14,7 @@
 
 import itertools
 import heapq
-def top_k(k, stream):
+def top_k(k, stream): # stream is an iterable object 
     # itertools.islice(iterable, stop) / itertools.islice(iterable, start, stop)
     # ref -> https://docs.python.org/2/library/itertools.html#itertools.islice
     # Why itertools.islice over normal slicing?
@@ -25,7 +25,7 @@ def top_k(k, stream):
     heapq.heapify(min_heap) # it seems it will heapify using value at the idx 0 if each element is an iterable themselves
     # heapq always creates a min heap. If max heap is needed, then flip the signs of the values
 
-    for next_string in stream:
+    for next_string in stream: # because stream is an iterable object, the iteration for this loop will start after where line 23 left off
         heapq.heappushpop(min_heap, (len(next_string), next_string))
     
     return [p[1] for p in heapq.nsmallest(k, min_heap)]
@@ -33,7 +33,7 @@ def top_k(k, stream):
 # heapq library: 
 # ref -> https://docs.python.org/3/library/heapq.html
     # -> heapq.heapify(L)                             - transforms the elements in L into a heap in-place
-    # -> heapq.nlargest(k, L) / heapq.nsmallest(k, L) - returns k largest / smallest elements in L
+    # -> heapq.nlargest(k, L) / heapq.nsmallest(k, L) - returns k largest / smallest list of elements in the iterable L which can be a heap
     # -> heapq.heappush(h, e)                         - pushes a new element, e on the heap, h
     # -> heapq.heappop(h)                             - pops the smallest element from the heap
     # -> heapq.heapushpop(h, a)                       - pushes on the heap and then pops and returns the smallest element

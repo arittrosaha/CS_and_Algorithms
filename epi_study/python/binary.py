@@ -198,3 +198,12 @@ def toggleBit(int_type, offset):
 # Substracting in Bits
 # ref -> https://www.youtube.com/watch?v=S9LJknZTyos
 
+# Base 10 to Base 2
+# print(bin(11)) # => 0b1011
+
+# Base 2 to Base 10
+# print(int("1011", 2)) # => 11
+
+# Weird stuff of bin and int in Python 3:
+# ref -> https://python-forum.io/Thread-Find-the-complement-of-a-number
+#     -> https://stackoverflow.com/questions/21871829/twos-complement-of-numbers-in-python

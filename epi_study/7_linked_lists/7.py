@@ -22,7 +22,7 @@ def remove_kth_last(list_head, k):
     for _ in range(k):
         first_pointer = first_pointer.next
     
-    second_pointer = dummy_head
+    second_pointer = dummy_head # k + 1 from last
     while first_pointer:
         second_pointer, first_pointer = second_pointer.next, first_pointer.next
     
