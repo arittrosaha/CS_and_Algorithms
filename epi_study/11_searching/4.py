@@ -8,7 +8,7 @@
 # Input - 16; Output - 4
 # Input - 300; Output - 17 because 17^2 = 289 < 300, and 18^2 = 324 > 300
 
-def square_root(k):
+def square_root(k): # Time O(n) : logk
     left, right = 0, k
     while left <= right:
         m = (right + left) // 2
