@@ -9,7 +9,7 @@
 
 import collections
 
-def can_form_palindrome(s):
+def can_form_palindrome(s): # Time: O(n), n - number of chars ; Space: O(c), c - number of unique chars
     # a string can be permuted to form a palindrome if and only if the number of chars whose frequencies is odd is at most 1.
     # at least one of the chars frequency will be odd when the string's length is odd
     return sum(v % 2 for v in collections.Counter(s).values()) <= 1
