@@ -32,10 +32,13 @@ class LRUcache:
         if isbn in self._isbn_price_table:
             price = self._isbn_price_table.pop(isbn)
         elif len(self._isbn_price_table) == self._capacity:
-            self._isbn_price_table.popitem(last = false)
+            self._isbn_price_table.popitem(last = False)
+            # when the last key is false, items are popped from the left
+            #                      true, items are popped from the right
 
         self._isbn_price_table[isbn] = price
 
     def erase(self, isbn):
         # the second argument of pop basically acts as the default value if the key is not found
         return self._isbn_price_table.pop(isbn, None) is not None 
+

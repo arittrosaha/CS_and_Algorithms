@@ -31,3 +31,5 @@
 
 # Built-in hash() function simplifies when implementing hash function of a user-defined class, i.e. __hash__(self)
 
+# defaultdict vs dict - default value vs no default value
+# ref -> https://stackoverflow.com/questions/6589814/what-is-the-difference-between-dict-and-collections-defaultdict
