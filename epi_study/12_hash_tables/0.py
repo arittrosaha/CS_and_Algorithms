@@ -7,6 +7,7 @@
     # s - t -> elements in s that are not in t
 # frozenset - immutable set
 # dict
+# https://docs.python.org/2/library/collections.html
 # collections.defaultdict
 # collections.Counter - used of counting the number of occurrences of keys
     # c = collections.Counter(a=3, b=1)
