@@ -1,26 +1,21 @@
 # Counting sort
 # ref -> https://www.youtube.com/watch?v=OKd534EWcdk
 
-import collections
-def counting_sort(l):
-    def counting_uniques(l): # method to find the max element and create a counter hash
-        uniq_keys = collections.defaultdict(int)
-        max_ele = 0
-        for ele in l:
-            if ele > max_ele:
-                max_ele = ele
-            uniq_keys[ele] += 1
-        return [max_ele, uniq_keys]
+# Time: O(n), n is the number of elements if range of possible numbers is capped at certain level
+# Space: O(k), k is the value of max element
 
-    max_ele, counts = counting_uniques(l)
+def counting_sort(l):
     # creating a list with max_ele+1 index positions
     # +1 because of the zero index offset
     # default value for this list has to be 0 rather than None because of the arithmetic operations that will happen in line 27 with each position's value
-    list_of_k = [0] * (max_ele+1)
+    max_ele = 0
+    for ele in l:
+        if ele > max_ele:
+            max_ele = ele
 
-    # placing the corresponding frequency to the index positions which represents numbers in input list
-    for key in counts: 
-        list_of_k[key] = counts[key]
+    list_of_k = [0] * (max_ele+1)
+    for ele in l:
+        list_of_k[ele] += 1
 
     # adding the previous frequency to the current frequency for each element
     # this step intuitively creates the last index position of an element from the input list

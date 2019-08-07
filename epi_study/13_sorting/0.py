@@ -3,8 +3,6 @@
 # merge sort     -     n     -    y    -    nlogn     -   nlogn   -   nlogn
 # heapsort       -     y     -    n    -    nlogn     -   nlogn   -   nlogn
 # count sort     -     n     -    y    -      n       -     n     -     n
-# radix sort     -
-# insertion sort -
 
 # Stable means preservation of the original order
 # In place means no additional space complexitiy 
