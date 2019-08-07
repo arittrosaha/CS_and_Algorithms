@@ -38,7 +38,6 @@ BinaryTree = zero.BinaryTree
 #     3   
 # => False
 
-import collections
 def is_symmetric(tree): # Time: O(n) ; Space: O(n) because of the path array
     def traversal(head, path=[]):
         if not head:
