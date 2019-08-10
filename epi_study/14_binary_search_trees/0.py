@@ -9,6 +9,11 @@
 
 # bisect module give bst time complexity for list
 
+# Traversals:
+    # Inorder - Left, Root, Right
+    # Preorder - Root, Left, Right
+    # Postorder - Left, Right, Root
+
 class BSTNode:
     def __init__(self, data=None, left=None, right=None):
         self.data, self.left, self.right = data, left, right
