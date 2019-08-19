@@ -21,6 +21,7 @@ def compute_tower_hanoi(num_rings):
 
 # print(compute_tower_hanoi(4))
 
+# Time: O(2^n), for every call stack, we are making two more calls
 
 # Logical understanding of the algorithm:
 
