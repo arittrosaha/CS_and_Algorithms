@@ -7,8 +7,8 @@
 #             - any ordering is acceptable
 
 # Complexity:
-    # Time - n x n!, each call is finished with n due to line 19 and there are n! calls
-    # Space - n!, each call gets a new slice
+    # Time - n!, each call is finished with n due to line 19 and there are n! calls
+    # Space - n!
 
 def permutations(A):
     def perm_helper(remaining, n):
