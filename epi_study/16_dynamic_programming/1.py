@@ -1,3 +1,6 @@
+# Number of combinations to get to the final score using the given plays
+# Basically coin change
+
 def num_combinations_for_final_score(final_score, individual_play_scores, memo={}):
     key = str(final_score) + str(individual_play_scores)
     if key in memo:

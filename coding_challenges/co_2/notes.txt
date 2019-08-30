@@ -1,0 +1,40 @@
+# phone screen
+
+1
+given an array with duplicates elements (any data type). sometimes more than 1 unique ones. how do you return the very first unique
+
+first try
+first pass - counter_hash 
+second pass - look for the unique with 1 frequency
+
+second try
+hash with no counter but tracking index. update to the latest index
+
+2
+given singly linked list. but sometimes, a node will have a next and a down like it will fork to a different linkedlist. It is possible for the down ll to have more branches
+how do you flattened them prioritizing the down and then next?
+
+recursive tail 
+but iterative better
+
+430 leet code - a little different because it deals with doubly linked
+
+3
+projects
+
+4
+question asking them - bring up volunteering
+
+
+
+
+# onsite
+background and history of software engineering - mention proficiency on data structure
+time complexity of traversing a 
+fav data structure
+with each q you want to get to a point where they ask you about dealing with large input. right answer is not more optimization but rather using more parallel computing
+
+1st technical - 2 
+2nd technical - 2  
+3rd - behaviral food
+4th - you need to be in this one
