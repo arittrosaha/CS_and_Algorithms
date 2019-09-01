@@ -1,0 +1,147 @@
+# onsite
+- background and history of software engineering - mention proficiency on data structure
+- time complexity of traversing a fav data structure
+- with each q you want to get to a point where they ask you about dealing with large input. right answer is not more optimization but rather using more parallel computing
+- they are willing to make suggestions, and help you along with your solution because it mimics what it would be like to work there
+- Be very comfortable with Big O
+    - what the runtime is for the solution and why or if you can improve upon it
+    - the big O details of operations in your code, like push or shift
+
+1st technical - 2 q
+- design a raffle that could insert, remove, and pick a winner all in constant time
+2nd technical - 2 q
+- it was dial pad permutations so the phone number ‘23’ represents [ad, ae, af, bd, be, bf, cd, ce, cf]
+3rd - behaviral
+4th - you need to be in this one - possible system design
+
+
+*Interview 1* (Two people who gave one question each)
+Asked me a couple of behavioral questions first about my resume. I told him I did a lot of practice with algorithms so he asked me what my favorite data structure was.
+1. Design a function that shuffles a deck of cards (represented as "S6" for 6 of Spades) and guarantees a uniform distribution. How would you do it in-place? How would you change your function to account a deck with 100 million cards? How would you change your function to let multiple computers shuffle the same deck?
+
+```def shuffle_deck(deck):
+    new_deck = []
+
+    while deck:
+        index = math.randint(len(deck))
+        new_deck.append(deck.pop(index))
+
+    return new_deck
+
+
+def shuffle_deck(deck):
+    for _ in range(len(deck)):
+        index1 = math.randint(len(deck))
+        index2 = math.randint(len(deck))
+        deck[index1], deck[index2] = deck[index2], deck[index1]
+
+    return deck```
+
+2. Design a stock tracker that has two functions: `stock_sold(stock, volume)` and `top_3_stocks_in_volume()`. How would you a variable number of top stocks (`top_n_stocks_in_volume(n)`)? How would you change the function if the `stock_sold` function runs 1000 times every time `top_n_stocks` running once?
+Had a chance to ask some questions at the end.
+
+```class StockMachine:
+    def __init__(self):
+        self.stocks = collections.defaultdict(int)
+
+    def stock_sold(self, ticker, volume):
+        self.stocks[ticker] += volume
+
+    def top_k_volume(self, k):
+        stocks = [(ticker, volume) for ticker, volume in self.stocks.items()]
+
+        return self.quick_select(stocks, k)
+
+    def quick_select(self, stocks, k):
+
+        pivot_index = math.randint(len(stocks))
+
+        selected_index = self.partition(pivot_index)
+
+    def partition(self, stocks, pivot_index):```
+
+*Interview 2* (Two people who gave on question each)
+Asked me behavioral questions about my resume checking the things that I talking about.
+1. Given a N x N bidirectional graph represented as numbers, a starting node, and a number of jumps you can perform from the starting node, how do you count the number of paths? What's the time complexity? If two nodes have the same value so they're non-unique, how would you change the function? What's the time complexity? Given a 3 x 3 graph and a path, how would you determine what node is in the middle? What's the time complexity?
+
+```def count_pos(start, hops):
+    count = 0
+
+    def dfs(node, hops):
+        if not node:
+            return
+        if hops == 0:
+            count += 1
+
+        for direction in node.directions:
+            dfs(direction, hops - 1)
+
+    dfs(start, hops)
+    return count
+
+
+def count_unique_pos(start, hops):
+    count = 0
+    visited = set()
+
+    def dfs(node, hops, path):
+        if not node:
+            return
+
+        # if path in visited:
+        #     return
+
+        # visited.add(path)
+
+        if hops == 0:
+            if path not in visited:
+                visited.add(path)
+                count += 1
+
+        for direction in node.directions:
+            dfs(direction, hops - 1, path + str(direction.val))
+
+    dfs(start, hops, "")
+    return count```
+2. Given a subway system where people swipe in and swipe out, design a system that keeps track of the average time between two train stations. How would you handle a huge amount of people going in and out of stations?
+Again had a chance to ask some questions.
+
+*Interview 3*
+This was an HR round with more behavioral questions. She also asked me some logistical questions like what salary are you expecting, what was you GPA in college, are you authorized to work in the US? I got to ask her questions as well.
+
+*Interview 4*
+Really long interview (was supposed to be 45 minutes but went close to 2 hours). He asked me tons of hard behavioral questions. He also asked me a series of connected system design questions and went really deep into strategies used to prevent hardware failure. Also spent time asking him questions. (edited) 
+
+
+class StationChecker:
+    def __init__(self):
+        self.station_to_station = collections.defaultdict(dict)
+        self.cards = {}
+
+    def swipe_in(from_time, from_station_id, card_id):
+        self.cards[card_id] = (from_station_id, from_time)
+
+    def swipe_out(to_time, to_station_id, card_id):
+        from_station_id, from_time = self.cards[card_id]
+
+        if "total_time" in self.station_to_station[(from_station_id, to_station_id)]:
+            self.station_to_station[(
+                from_station_id, to_station_id)]["total_time"] += to_time - from_time
+            self.station_to_station[(
+                from_station_id, to_station_id)]["count"] += 1
+        else:
+            self.station_to_station[(
+                from_station_id, to_station_id)]["total_time"] = to_time - from_time
+            self.station_to_station[(
+                from_station_id, to_station_id)]["count"] = 1
+
+        def self.cards[card_id]
+
+    def get_average_travel_time(from_station_id, to_station_id):
+        total_time, count = self.station_to_station[(
+            from_station_id, to_station_id)]
+
+        return total_time / count
+
+
+

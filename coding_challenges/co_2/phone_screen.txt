@@ -1,5 +1,7 @@
 # phone screen
 
+technical:
+
 1
 given an array with duplicates elements (any data type). sometimes more than 1 unique ones. how do you return the very first unique
 
@@ -19,22 +21,16 @@ but iterative better
 
 430 leet code - a little different because it deals with doubly linked
 
-3
-projects
+3 
+For a given string, there will be different types of parentheses: {}, (), and []. Return true or false if the string is balanced properly: all opening parenthesis must be closed with its respective closing parenthesis and in order.
 
-4
-question asking them - bring up volunteering
-
-
+4 
+For a given array of numbers, return the pair of numbers with the least absolute difference.
 
 
-# onsite
-background and history of software engineering - mention proficiency on data structure
-time complexity of traversing a 
-fav data structure
-with each q you want to get to a point where they ask you about dealing with large input. right answer is not more optimization but rather using more parallel computing
 
-1st technical - 2 
-2nd technical - 2  
-3rd - behaviral food
-4th - you need to be in this one
+non-technical:
+- talking about projects
+- question to ask them - bring up volunteering
+- I looked at your resume. Which projects do you think relate to the work that we do at Bloomberg?
+- did you perform any unit testing on your fullstack.

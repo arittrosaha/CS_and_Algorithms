@@ -1,0 +1,67 @@
+Bloomberg
+
+Job Posting: https://www.linkedin.com/jobs/view/1332466878/
+- Our training program will teach you the ins and outs of our technology stack and how to be a successful software engineer in our high-energy and fast-paced environment. 
+- Training consists of lectures, labs and group projects. 
+- You'll become a pro on the Bloomberg Terminal and learn how we do database systems, network communication, real-time data processing, and build UIs.
+- more emphasis on team situation
+
+Michael Bloomberg
+- Philanthropy
+    - Michael Bloomberg was at one point the third-largest philanthropic donor in the United States. 
+    - Public health
+    - Environment
+    - Work with Beyond Coal
+    - Pay the Paris Agreement (5.5 million gap)
+    - Education
+    - Donated over $3 billion to his undergraduate alma mater John Hopkins.
+    - Woman’s Rights
+    - Giving Pledge
+    - $1 salary
+- He wrote an op-ed on Bloomberg why he wasn’t running for president.
+    https://www.bloomberg.com/opinion/articles/2019-03-05/our-highest-office-my-deepest-obligation
+    Instead of running a national presidential campaign, he wanted to combat problems in climate change and gun control directly.
+    He didn’t want to spend two years just talking about his ideas but actually putting in the work to fight for the things he believes in.
+    On Beyond Coal and how maneuvering legislature: “But Mother Nature does not wait on our political calendar.”
+    Emphasis on grass root movements to combat societal problems.
+    Took the train everyday. Leading by example.
+
+Why Bloomberg?
+- Bloomberg is up to par with a lot of other technology companies. 
+- Crossroads of Finance, Technology, and Data
+- Since I am applying, I am interested in the world of technology and data, in which Bloomberg is a leading organization. 
+- However, I am not only interested in what Bloomberg does, but I am also interested in how it does it, and that is with transparency and with a focus on people, whether that is employees, clients or consumers.
+- The focus on Philanthropy, Environmental and Economic Sustainability was the real draw for me, and why I may prefer Bloomberg over other tech companies.
+    - Volunteer opportunities
+    - 85% of Bloomberg’s profits go into philanthropy
+- Bloomberg training and enough freedom to select your own team to work for.
+- Until now I never got a chance to work on finance-related software. 
+- Bloomberg terminal can be an exciting thing for me to work on because I like to deal with huge data, scaling issues and low-level stuff.
+  Focus on continuous learning through many in-house training programs.
+  (Training consists of lectures, labs and group projects. In-house training staff) 
+  I’ve heard about classes on stock trading.
+- Focus on optimization. I developed a love for optimized code and I’m very excited to learn C++ or even Rust if Bloomberg decides to adopt it in the future.
+- Volunteer opportunities.
+- Amazing healthcare in BWELL. It seems like Bloomberg really cares for the wellbeing of its employees. 
+- Free access to almost all museums in NYC.
+
+Bloomberg News/Businessweek
+- Runs a wire service(news by wire to news companies), a global television network, digital websites, a radio station, newsletters, and magazines.
+- Known for its unbiased reporting (Allsides, Adfontesmedia)
+
+Bloomberg Terminal
+- Started from an initial investment by Merrill Lynch
+
+Competitors (Not that important to know tbh)
+- Dow Jones (Wall Street Journal)
+- Blackstone
+
+Questions to ask Interviewer
+- What have you done to utilize Bloomberg’s support for its employees to do philanthropic work?
+    I want to do more hands-on volunteer work. (I have a tendency to only feel accomplished the more I exert myself physically)
+- What are the best qualities of successful people in this position?
+    Due to the cut-throat environment that exists in the FinTech industry, how important is optimized and maintainable code?
+- If you were to give me an offer, what would I have done specifically to be considered successful?
+- If you were to give me an offer, and I was to accept it, what would be the biggest surprise within the first week?
+- What do you think are the benefits of Bloomberg utilizing a flat hierarchy?
+
