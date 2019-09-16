@@ -49,6 +49,9 @@ def get_first_unique_v3(arr):
 # print(get_first_unique_v3([True, False, None, 0, 1, None, "67", True, 0, 1, 45]))         # => "67"
 # print(get_first_unique_v3([True, False, None, 0, 1, None, "67", True, 0, 1, 45, "67"]))   # => 45
 
+
+
+
 # 2
 # Given a singly linkedlist. 
 # A node can have a next and a down - forking to a different linkedlist. 
@@ -65,23 +68,13 @@ def flatten_linked_list_recur(linked_list): # Time: O(n)
 
     if down_ll:
         prev_flattened_tail = flatten_linked_list_recur(down_ll)
-        linked_list.next = linked_list.down
+        linked_list.next = down_ll
         prev_flattened_tail.next = next_ll
 
     if next_ll:
         return flatten_linked_list_recur(next_ll)
     else:
         return prev_flattened_tail
-
-def flatten_linked_list_iter(linked_list):
-    stack = [linked_list]
-    while len(stack):
-        curr_node = stack[-1]
-        next_ll = curr_node.next
-        down_ll = curr_node.down
-        
-
-
 
 
 class Node:
@@ -125,6 +118,8 @@ one = Node(1, two)
 # print_ll(one) # => 1 2 3 7 8 11 12 9 10 4 5 6
 
 
+
+
 # 3
 # For a given string, there will be different types of parentheses: {}, (), and []. 
 # Return true or false if the string is balanced properly: 
@@ -147,6 +142,8 @@ def is_balance(paren_str): # Time: O(n) ; Space: O(n)
 # print(is_balance("(]"))     # => False
 # print(is_balance("([)]"))   # => False
 # print(is_balance("{[]}"))   # => True
+
+
 
 
 # 4
