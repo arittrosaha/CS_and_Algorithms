@@ -1,7 +1,7 @@
 # https://leetcode.com/problems/all-paths-from-source-to-target/
 # https://www.techopedia.com/definition/5739/directed-acyclic-graph-dag
 
-def all_paths_from_source_to_target(node):
+def all_paths_from_source_to_target(node): # Time: O(n) ; Space: O(n)
     def helper(node):
         if len(node.children) is 0:
             return [[node.value]]
