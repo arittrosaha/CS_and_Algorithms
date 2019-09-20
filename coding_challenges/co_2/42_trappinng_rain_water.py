@@ -63,33 +63,5 @@ def trapping_rain_water_v2(elevation): # Time: O(n) ; Space: O(n)
 # print(trapping_rain_water_v2([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]))
 
 
-# ref -> https://www.geeksforgeeks.org/trapping-rain-water/
-def trapping_rain_water_v3(elevation): # Time: O(n) ; Space: O(1)
-    # initialize output
-    result = 0
-
-    # maximum element on left and right
-    left_max = 0
-    right_max = 0
-
-    # indices to traverse the array
-    lo = 0
-    hi = len(elevation)-1
-
-    while(lo <= hi):
-        if(elevation[lo] < elevation[hi]):
-            if(elevation[lo] > left_max):
-                # update max in left
-                left_max = elevation[lo]
-            else:
-                # water on curr element = max - curr
-                result += left_max - elevation[lo]
-            lo += 1
-        else:
-            if(elevation[hi] > right_max):
-                # update right maximum
-                right_max = elevation[hi]
-            else:
-                result += right_max - elevation[hi]
-            hi -= 1
-    return result
+# For better time complexity, look bellow
+# ref -> https://leetcode.com/problems/trapping-rain-water/solution/
