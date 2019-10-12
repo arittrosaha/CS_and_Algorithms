@@ -1,4 +1,4 @@
-# https: // leetcode.com/problems/candy-crush
+# https://leetcode.com/problems/candy-crush
 
 def candy_crush(board):
     

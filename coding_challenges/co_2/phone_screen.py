@@ -145,7 +145,6 @@ def is_balance(paren_str): # Time: O(n) ; Space: O(n)
 
 
 
-
 # 4
 # For a given array of numbers, return the pair of numbers with the least absolute difference.
 

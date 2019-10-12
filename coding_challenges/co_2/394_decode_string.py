@@ -9,6 +9,7 @@ def decode_string(str):
             substr = decode_string(str[min+1:max-1]) # min and max exclusive or else infinite call stack because the inner string with enclosing brackets gets passed
             result = "".join([result, substr * int(str[i-1])])
             # result += (substr * int(str[i-1])) # join has an O(n+m) vs concatination O(mn)
+                # https://stackoverflow.com/questions/39312099/why-is-join-faster-than-in-python
             i = max
         elif str[i].isalpha():
             result = "".join([result, str[i]])
